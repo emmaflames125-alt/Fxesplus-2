@@ -323,7 +323,10 @@ function readRenameList(filename) {
 		}
 
 		if (addr !== null) {
-			if (addr >= disasm.length) throw new Error(`Address out of range: ${addr.toString(16).padStart(5, '0')}`);
+			if (addr >= disasm.length) {
+				note(`Warning: disassembly missing for address ${addr.toString(16).padStart(5,'0')}, skipping label ${real}\n`);
+				continue;
+			}
 
 			let tags;
 			if (disasm[addr] && disasm[addr].startsWith('push lr')) {
