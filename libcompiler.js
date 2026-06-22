@@ -105,7 +105,7 @@ function optimizeAdrForNpress(adr) {
 	/**
 	 * For a 'POP PC' command, the lowest significant bit in the address
 	 * does not matter. This function uses that fact to minimize number
-	 * of key strokes used to enter the hackstring.
+	 * number of key strokes used to enter the hackstring.
 	 */
 	const adr1 = adr;
 	const adr2 = adr ^ 1;
